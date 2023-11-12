@@ -4,7 +4,8 @@
   "info": {
     "singularName": "producto",
     "pluralName": "productos",
-    "displayName": "Productos"
+    "displayName": "Productos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,30 +26,40 @@
     },
     "oferta": {
       "type": "decimal",
-      "required": true
-    },
-    "categoria": {
-      "type": "string",
-      "required": true
+      "required": false
     },
     "portada": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "imagenes": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "imagenes": {
       "type": "media",
       "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "nombre",
       "required": true
     },
-    "fecha": {
-      "type": "datetime",
+    "categorias": {
+      "type": "enumeration",
+      "enum": [
+        "Hogar",
+        "Juegos y accesorios",
+        "Electrónica"
+      ],
       "required": true
     }
   }

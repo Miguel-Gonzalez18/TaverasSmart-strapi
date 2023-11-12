@@ -368,6 +368,7 @@ export interface ApiProductoProducto extends Schema.CollectionType {
     singularName: 'producto';
     pluralName: 'productos';
     displayName: 'Productos';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -376,11 +377,15 @@ export interface ApiProductoProducto extends Schema.CollectionType {
     nombre: Attribute.String & Attribute.Required;
     descripcion: Attribute.RichText & Attribute.Required;
     precio: Attribute.Decimal & Attribute.Required;
-    oferta: Attribute.Decimal & Attribute.Required;
-    categoria: Attribute.String & Attribute.Required;
+    oferta: Attribute.Decimal;
     portada: Attribute.Media & Attribute.Required;
     imagenes: Attribute.Media & Attribute.Required;
-    fecha: Attribute.DateTime & Attribute.Required;
+    destacado: Attribute.Boolean & Attribute.DefaultTo<false>;
+    url: Attribute.UID<'api::producto.producto', 'nombre'> & Attribute.Required;
+    categorias: Attribute.Enumeration<
+      ['Hogar', 'Juegos y accesorios', 'Electr\u00F3nica']
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
