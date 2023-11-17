@@ -386,6 +386,7 @@ export interface ApiProductoProducto extends Schema.CollectionType {
       ['Hogar', 'Juegos y accesorios', 'Electr\u00F3nica']
     > &
       Attribute.Required;
+    enlace: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
