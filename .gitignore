@@ -113,6 +113,3 @@ dist
 build
 .strapi-updater.json
 
-.vercel
-# path: ./.gitignore
-package-lock.json
